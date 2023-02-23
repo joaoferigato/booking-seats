@@ -1,0 +1,158 @@
+/* seat selector */
+
+.seat-container {
+    display: grid;
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px rgb(30, 30, 30, .3);
+    grid-template-columns: 145px 10px 190px 10px 145px;
+    grid-template-rows: 50px 20px auto;
+    grid-template-areas:
+        'screen-section screen-section screen-section screen-section screen-section'
+        'horizontal-space-section horizontal-space-section horizontal-space-section horizontal-space-section horizontal-space-section'
+        'left-section vertical-space-left-section center-section vertical-space-right-section right-section';
+}
+
+.screen-section {
+    grid-area: screen-section;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen {
+    display: flex;
+    background-color: rgb(0, 0, 70, .8);
+    width: 80%;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-text {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.horizontal-space-section {
+    grid-area: horizontal-space-section;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-space {
+    background-image: url('../../../assets/imgs/path_right.png');
+    background-position: center;
+    background-repeat: space;
+    height: 10px;
+    width: calc(100% - 15px)
+}
+
+.left-section {
+    grid-area: left-section;
+    padding: 10px 5px;
+}
+
+.seats-row {
+    margin: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seat {
+    list-style-type: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #0275d0;
+    margin: 3px 1px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.seat :hover {
+    background-color: #424242;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.seat-selected {
+    list-style-type: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #5cb85c;
+    margin: 3px 1px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.seat-text {
+    margin: 0;
+    font-size: 9px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    pointer-events: none;
+    user-select: none;
+}
+
+.vertical-space-left-section {
+    grid-area: vertical-space-left-section;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-space {
+    background-image: url('../../../assets/imgs/path_down.png');
+    background-position: center;
+    background-repeat: space;
+    width: 10px;
+    height: calc(100% - 15px);
+}
+
+.center-section {
+    grid-area: center-section;
+    padding: 10px 5px;
+}
+
+.vertical-space-right-section {
+    grid-area: vertical-space-right-section;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-section {
+    grid-area: right-section;
+    padding: 10px 5px;
+}
+
+@media (max-width: 750px) {
+    .seat-container {
+        width: 370px;
+        grid-template-columns: 105px 10px 140px 10px 105px;
+    }
+
+    .seat {
+        width: 15px;
+        min-width: 15px;
+        height: 15px;
+    }
+    
+    .seat-selected {
+        width: 15px;
+        min-width: 15px;
+        height: 15px;
+    }
+
+    .seat-text {
+        font-size: 7px;
+        line-height: 15px;        
+    }
+}

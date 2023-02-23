@@ -1,0 +1,40 @@
+.main {
+    display: grid;
+    height: 100%;
+    width: 1fr;
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 1fr 50px;
+    grid-template-areas:
+        'app-seat-selection app-seat-info'
+        'app-timer app-seat-info';
+}
+
+app-seat-selection {
+    grid-area: app-seat-selection;
+    margin: auto;
+}
+
+app-timer {
+    grid-area: app-timer;
+    margin: auto;
+}
+
+app-seat-info {
+    grid-area: app-seat-info;
+    width: 100%;
+}
+
+@media (max-width: 750px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px 1fr 50px;
+        grid-template-areas:
+            'app-seat-info'
+            'app-seat-selection'
+            'app-timer';
+    }
+
+    /* app-seat-info {
+        display: none;
+    } */
+}

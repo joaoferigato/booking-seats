@@ -1,0 +1,34 @@
+<div class="options">
+    <h1>Summary</h1>
+    <hr>
+
+    <h2>Total seats:</h2>
+    <p [ngPlural]="totSelSeats">
+        <ng-template ngPluralCase="=0">No seats selected</ng-template>
+        <ng-template ngPluralCase="=1">{{ totSelSeats }} seat</ng-template>
+        <ng-template ngPluralCase="other">{{ totSelSeats }} seats</ng-template>
+    </p>
+
+    <hr>
+    <h2>Selected seats:</h2>
+    <p [ngPlural]="totSelSeats">
+        <ng-template ngPluralCase="=0">No seats selected</ng-template>
+        <ng-template ngPluralCase="other">{{ seatsList }}</ng-template>
+    </p>
+
+    <hr>
+    <h2>Rows per Section:</h2>
+    <form #form="ngForm" (ngSubmit)="changeRows()">
+        <label>A Section:</label>
+        <input [ngClass]="{'valid-value': form.form.controls.leftRow?.valid, 'invalid-value': form.form.controls.leftRow?.invalid}" type="number" name="leftRow" [(ngModel)]="row.left" #leftRow="ngModel" pattern="^[1-9]$|^[1-5][0-9]$|^60$" required>
+        <p class="error-message" *ngIf="leftRow && !leftRow.valid">Please enter a number from 1 to 60</p>
+        <label>B Section:</label>
+        <input [ngClass]="{'valid-value': form.form.controls.centerRow?.valid, 'invalid-value': form.form.controls.centerRow?.invalid}" type="number" name="centerRow" [(ngModel)]="row.center" #centerRow="ngModel" pattern="^[1-9]$|^[1-5][0-9]$|^60$" required>
+        <p class="error-message" *ngIf="centerRow && !centerRow.valid">Please enter a number from 1 to 60</p>
+        <label>C Section:</label>
+        <input [ngClass]="{'valid-value': form.form.controls.rightRow?.valid, 'invalid-value': form.form.controls.rightRow?.invalid}" type="number" name="rightRow" [(ngModel)]="row.right" #rightRow="ngModel" pattern="^[1-9]$|^[1-5][0-9]$|^60$" required>
+        <p class="error-message" *ngIf="rightRow && !rightRow.valid">Please enter a number from 1 to 60</p>
+        <input #submitBtn type="submit" value="Apply" [disabled]="form.invalid || form.pristine">
+    </form>
+
+</div>

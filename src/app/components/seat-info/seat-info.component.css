@@ -1,0 +1,113 @@
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    margin: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    padding: 35px 0px;
+    box-sizing: border-box;
+}
+
+hr {
+    border: solid 1px rgb(150, 150, 150, 0.2);
+    width: 85%;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 8px;
+}
+
+h2 {
+    font-size: 15px;
+    margin: 3px;
+}
+
+h3 {
+    font-size: 13px;
+    margin: 3px;
+}
+
+p {
+    margin: 3px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.error-message {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #d00;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    margin: 3px;
+}
+
+input[type=number] {
+    margin: 3px;
+    width: 60%;
+    padding: 3px;
+    border-radius: 3px;
+    -moz-appearance: textfield;
+}
+
+.valid-value {
+    border: 1px solid rgb(150, 150, 150, 1);
+}
+
+.invalid-value {
+    border: 1px solid #d00;
+}
+
+input[type=submit] {
+    margin: 10px;
+    border-radius: 3px;
+    height: 25px;
+    background-color: #fff;
+    border: 1px solid rgb(150, 150, 150, 1);
+    box-shadow: 1px 1px 1px rgb(30, 30, 30, .3);
+}
+
+input[type=submit]:active:enabled {
+    background-color: #ddd;
+}
+
+@media (max-width: 750px) {
+    .options {
+        flex-direction: row;
+        width: 100%;
+        height: 250px;
+    }
+
+    hr {
+        display: none;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    h2, h3, p, label {
+        font-size: 13px;
+    }
+
+    input[type=number] {
+        width: 50px;
+    }
+
+    input[type=submit] {
+        width: 50px;
+        font-size: 10px;
+    }
+}

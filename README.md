@@ -1,3 +1,10 @@
+# About
+
+Angular 9 front-end project to book seats. At that time, I was using a platform which was not compatible with ES6 and did not have some basic JS array methods, that is why they were not used in the project.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/90333794/220935133-aec8fd71-8477-4dba-88a5-42807b5089ad.JPG">
+</p>
+
 # BookingSeats
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.

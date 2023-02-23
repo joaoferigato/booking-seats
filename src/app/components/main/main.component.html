@@ -1,0 +1,5 @@
+<div class="main">
+    <app-seat-selection (sendSelectedSeat)="receiveSelectSeat($event)"></app-seat-selection>
+    <app-timer></app-timer>
+    <app-seat-info [selectedSeat]="selectedSeat"></app-seat-info>
+</div>
